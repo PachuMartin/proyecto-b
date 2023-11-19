@@ -1,0 +1,75 @@
+<h1>{{ fechaActual | date }}</h1>
+
+
+<div>
+  <h1>Lista de Empleados</h1>
+  <table class="table table-hover table-striped asistencia">
+    <thead class="table-success">
+   
+      <tr>
+        <th>Legajo</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Entrada</th>
+  
+      </tr>
+    </thead>
+    <tbody >
+      <tr  *ngFor="let elemento of listaEmpleados" >
+        <td>{{elemento.legajo}}</td>
+        <td>{{elemento.nombre}}</td>
+        <td>{{elemento.apellido}}</td>
+        <td><button class="btn " style="background-color: #54b348 ; color:#fff;"  (click)="entrada(elemento.id)"  >entrada</button></td>
+       
+        
+      
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+<div>
+  <h1>Lista de asistencias</h1>
+  <table class="table table-hover table-striped asistencia">
+    <thead class="table-success">
+   
+      <tr>
+        <th>Legajo</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Entrada</th>
+        <th>Salida</th>
+        
+        <th>Fecha</th>
+        <th>Modificar</th>
+        <th>Eliminar</th>
+  
+      </tr>
+    </thead>
+    <tbody >
+      <tr  *ngFor="let e of listaAsistencias" >
+        <td>{{e.empleado.legajo}}</td>
+        <td>{{e.empleado.nombre}}</td>
+        <td>{{e.empleado.apellido}}</td>
+        <td>{{e.entrada}}</td>
+        <td><button class="btn " style="background-color: #54b348 ; color:#fff;"   *ngIf="e.salida==null" (click)="salida(e.id,e.empleado,e.entrada,e.fecha)" >salida</button> {{e.salida}}</td>
+        <td>{{e.fecha | date: 'dd/MM/yyyy'}}</td>
+        
+        <td>
+          <button  class="btn " style="background-color: #6f4ee4 ; color:#fff;"   >Modificar</button>
+
+        </td>
+        <td>
+          <button class="btn " style="background-color: #d83c3c ; color:#fff;"   >Eliminar</button>
+        </td>
+
+         
+
+        
+      </tr>
+    </tbody>
+  </table>
+</div>

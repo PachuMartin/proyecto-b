@@ -1,0 +1,169 @@
+
+/*Se utiliza grid para maquetar la pagina*/
+body{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+}
+/*El header ocupara las 12 columnas del grid y dentro del header se utiliza flex
+ para ubicar el logo, las opciones y el salir*/
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 0.8rem;
+    grid-column: 1/13;
+}
+/*Se dimensiona el logo que esta en el header*/
+header .logo{
+    width: 100px;
+    aspect-ratio: 1/1;
+}
+/*Se dimensiona el salir que esta en el header*/
+header .salir-icon{
+    width: 50px;
+}
+/*El cerrar solo aparece en responsive, por lo cual es display es none 
+y se le elimina el borde y color de fondo pasa a transparente*/
+.close{
+    background-color: transparent;
+    border: none;
+    display: none;
+}
+/*Se ubican los elementos de la barra de opciones*/
+.nav-list{
+    list-style: none;
+    display: flex;
+    gap:1rem;
+    font-size: 1em;
+}
+/*Es el contenedor que contiene el salir y la hambuerguesa (en responsive)*/
+.options{
+    display: flex;
+    flex-direction: column;
+    gap:1rem
+}
+/*estilos de la hambuerguesa (Solo aparece en responsive)*/
+.menu{
+    display: none;
+    background-color:transparent;
+    width: 60px;
+    border:none;
+    aspect-ratio: 1/1;
+    border-radius: 8px;
+    cursor: pointer;
+}
+/*Tamaño de letra*/
+.menu .fa-bars{
+    font-size: 1.2em;
+}
+/*Se estilizan los elementos de la barra de navegacion*/
+li{
+    padding:0.4rem 0.6rem;
+    background:linear-gradient(#1E590E,#7AB76C,#1E590E);
+    border-radius: 80px;
+}
+/*Se estilizan los elementos de la barra de navegacion cuando se le pasa el mouse por encima*/
+li:hover{
+    background:linear-gradient( #265d11, #54ac32,#265d11);
+}
+/*Se estilizan el texto del enlace*/
+li a{
+    text-decoration: none;
+    color:var(--black);
+}
+/*contenedor que se desea centrar*/
+.container{
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    grid-column: 1/13;
+}
+/*contenedor para imagenes*/
+.img-container{
+    width: 100%;
+    height: 18rem;
+    display: flex;
+    justify-content: center;
+}
+/*se estiliza para que la imagen ocupe todo su contenedor*/
+.img-container img{
+    height:100%;
+    width: 100%;
+}
+/*Comportamiento en pantallas menores a 900px*/
+@media screen and (max-width:900px) {
+    html{
+        font-size: 14px;
+    }
+    header .logo{
+        width: 60px;
+    }
+    header .salir-icon{
+        width: 30px;
+    }
+    .nav-list{
+        gap:0.3rem;
+    }
+}
+/*Comportamiento en pantallas menores a 680px*/
+@media screen and (max-width:680px) {
+    html{
+        font-size: 12px;
+    }
+    /*Se oculta la barra de navegacion en horizontal, que se tenia en pantallas grandes*/
+    .nav-list{
+        display: none;
+    }
+    /*Aparece la hamburguesa*/
+    .menu{
+        display: block;
+    }
+    /*Cambia el tamaño del logo*/
+    header .logo{
+        width:150px;
+    }
+     /*Cambia el tamaño del salir*/
+    header .salir-icon{
+        width: 60px;
+    }
+     /*se estiliza el color de fondo para los li*/
+    li{
+        background: transparent; 
+    }
+     /*estilos para los enlaces*/
+    li a{
+        color: var(--white);
+        font-weight: 500;
+        font-size: 2em;
+    }
+     /*estilos de la barra de navegacion al momento que estamos en responsive, 
+     se muestra al undir la hamburgues (ver archivo menu.js)*/
+    .navbar-responsive{
+        position: absolute;
+        top:0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.735);
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        height: 100vh;
+        gap:4rem;
+        overflow: hidden;
+    }
+    /*Se les da un espaciado a las opciones*/
+    .nav-list{  
+        height: 80%;
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    /*el cerrar se ubica alianado al fondo respecto a su padre*/
+    .close{
+        align-self: end;
+    }
+}
+
+

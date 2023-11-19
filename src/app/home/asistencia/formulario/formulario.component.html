@@ -1,0 +1,39 @@
+<div>
+    <table class="table table-hover table-striped asistencia">
+      <thead class="table-success">
+     
+        <tr>
+          <th>Legajo</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Entrada</th>
+          <th>Salida</th>
+          <th>Modificar</th>
+          <th>Eliminar</th>
+    
+        </tr>
+      </thead>
+      <tbody >
+        <tr  *ngFor="let e of listaAsistencias" >
+          <td>{{e.empleado.legajo}}</td>
+          <td>{{e.empleado.nombre}}</td>
+          <td>{{e.empleado.apellido}}</td>
+          <td><button (click)="entrada(e.id)"  >entrada</button>{{e.entrada}}</td>
+          <td><button (click)="salida()" >salida</button>-</td>
+          
+          <td>
+            <button>Modificar</button>
+  
+          </td>
+          <td>
+            <button>Eliminar</button>
+          </td>
+  
+           
+  
+          
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

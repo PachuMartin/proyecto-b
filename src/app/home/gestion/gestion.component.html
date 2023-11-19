@@ -1,0 +1,74 @@
+
+
+<body>
+    <header class="header-menu-items">
+        <h1>GESTION DE EMPLEADOS</h1>
+        <a href="./menu.html"><img src="./Icons/atras.png" alt="atras" class="atras-icon"></a>
+    </header>
+    <aside>
+        <nav class="nav-aside">
+            <div class="nav-options">
+                <button class="options" id="nuevo-empleado">NUEVO EMPLEADO</button>
+                <button class="options inactive" disabled id="modificar-empleado">MODIFICAR EMPLEADO</button>
+                <button class="options inactive" disabled id="eliminar-empleado">ELIMINAR EMPLEADO</button>
+            </div>
+        </nav>
+    </aside>
+    <main>
+        <div class="container-buscar">
+            <div class="div-buscar">
+                <form action="" class="form-empleado">
+                    <label for="empleado"> Legajo
+                        <input type="text" id="empleado">
+                    </label>
+                    <button type="submit" id="search">Buscar<span></span></button>
+                </form>
+            </div>
+            <div class="datos">
+                <h2>Datos del empleado</h2>
+                <div class="modal"></div>
+                <form action="" class="form-empleados">
+                    <label for="legajo"> Legajo
+                        <input type="text" id="legajo" disabled>
+                    </label>
+                    <label for="documento"> Documento
+                        <input type="text" id="documento" disabled>
+                    </label>
+                    <label for="nombre"> Nombre
+                        <input type="text" id="nombre" disabled>
+                    </label>
+                    <label for="apellido"> Apellido
+                        <input type="text" id="apellido" disabled>
+                    </label>
+                    <label for="sexo"> Sexo
+                        <input type="text" id="sexo" disabled>
+                    </label>
+                    <label for="edad"> Edad
+                        <input type="text" id="edad" disabled>
+                    </label>
+                    <label for="direccion"> Direccion
+                        <input type="text" id="direccion" disabled>
+                    </label>
+                    <label for="telefono"> Telefono
+                        <input type="text" id="telefono" disabled>
+                    </label>
+                    <label for="email"> E-mail
+                        <input type="email" id="email" disabled>
+                    </label>
+                    <div class="div-switch">Estado
+                        <input type="checkbox" id="estado" disabled>
+                        <label for="estado" class="switch-btn"> </label>
+                    </div>
+                    <div class="cambios">
+                        <button id="guardar" class="cambio inactive">Guardar</button>
+                        <button id="cancelar" class="cambio inactive">Cancelar</button>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <p>© Ballut Hnos.</p>
+    </footer>
+</body>
